@@ -1,5 +1,6 @@
 package org.example.firstSpringWeb.dto;
 
+import org.example.firstSpringWeb.web.dto.HelloResponseDto;
 import org.junit.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;

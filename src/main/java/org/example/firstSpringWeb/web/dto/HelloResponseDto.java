@@ -1,4 +1,4 @@
-package org.example.firstSpringWeb.dto;
+package org.example.firstSpringWeb.web.dto;
 
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
