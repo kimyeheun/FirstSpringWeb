@@ -10,7 +10,7 @@ import javax.persistence.*;
 @NoArgsConstructor //기본 생성자 자동 추가
 @Entity //테이블과 링크될 클래스이다. -> 절대!!!! Setter 메소드를 만들지 않는다!
         //DB 삽입 방법? <- 생성자(여기서는 @Builder 빌더 클래스)를 통해 값을 최운 후 DB에 삽입
-public class Posts {
+public class Posts extends BaseTimeEntity{
 
     @Id //테이블의 pk 필드
     @GeneratedValue(strategy = GenerationType.IDENTITY) //pk 생성 규칙
