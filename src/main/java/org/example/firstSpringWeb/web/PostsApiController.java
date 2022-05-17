@@ -1,7 +1,7 @@
 package org.example.firstSpringWeb.web;
 
 import lombok.RequiredArgsConstructor;
-import org.example.firstSpringWeb.service.posts.PostsService;
+import org.example.firstSpringWeb.service.PostsService;
 import org.example.firstSpringWeb.web.dto.PostsResponseDto;
 import org.example.firstSpringWeb.web.dto.PostsSaveRequestDto;
 import org.example.firstSpringWeb.web.dto.PostsUpdateRequestDto;
@@ -21,6 +21,12 @@ public class PostsApiController {
     @PutMapping("/api/v1/posts/{id}")
     public Long update(@PathVariable Long id, @RequestBody PostsUpdateRequestDto requestDto) {
         return postsService.update(id, requestDto);
+    }
+
+    @DeleteMapping("/api/v1/posts/{id}")
+    public Long delete(@PathVariable Long id) {
+        postsService.delete(id);
+        return id;
     }
 
     @GetMapping("/api/v1/posts{id}")

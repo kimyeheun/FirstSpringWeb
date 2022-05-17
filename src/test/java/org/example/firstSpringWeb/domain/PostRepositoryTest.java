@@ -1,5 +1,7 @@
-package org.example.firstSpringWeb.domain.posts;
+package org.example.firstSpringWeb.domain;
 
+import org.example.firstSpringWeb.domain.posts.Posts;
+import org.example.firstSpringWeb.domain.posts.PostsRepository;
 import org.junit.After;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -61,7 +63,7 @@ public class PostRepositoryTest {
         //then
         Posts posts = postsList.get(0);
 
-        System.out.println(">>>>>>>>>>>>>>>> createdDate= " + posts.getCreatedDate() + ", modifiedDate=" + posts.getModifiedDate());
+        System.out.println(">>>>>>>>> createDate= " + posts.getCreatedDate() + ", modifiedDate=" + posts.getModifiedDate());
 
         assertThat(posts.getCreatedDate()).isAfter(now);
         assertThat(posts.getModifiedDate()).isAfter(now);
