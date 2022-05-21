@@ -1,6 +1,7 @@
 package org.example.firstSpringWeb.web;
 
 import lombok.RequiredArgsConstructor;
+import org.example.firstSpringWeb.config.auth.LoginUser;
 import org.example.firstSpringWeb.config.auth.dto.SessionUser;
 import org.example.firstSpringWeb.domain.posts.PostsRepository;
 import org.example.firstSpringWeb.service.PostsService;
@@ -20,9 +21,11 @@ public class IndexController {
     private final HttpSession httpSession;
 
     @GetMapping("/")
-    public String index(Model model) { //서버 템플릿 엔진에서 사용할 수 있는 객제를 저장할 수 있음음
+    public String index(Model model, @LoginUser SessionUser user) {
+        //서버 템플릿 엔진에서 사용할 수 있는 객체를 저장할 수 있음
+        //LoginUser 어노테이션 적용.
         model.addAttribute("posts", postsService.findAllDesc());
-        SessionUser user = (SessionUser) httpSession.getAttribute("user");
+        //SessionUser user = (SessionUser) httpSession.getAttribute("user"); 이 코드를 어노테이션 적용 이후 제거.
         if(user != null) {
             model.addAttribute("userName", user.getName());
         }
