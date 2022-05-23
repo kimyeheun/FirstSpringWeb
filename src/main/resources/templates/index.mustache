@@ -1,5 +1,5 @@
+<!--'{>}'는 현재 머스테치 파일(index)을 기준으로 다른 파일을 가져온다.(여기서는 header)-->
 {{>layout/header}}
-//'{{>}}'는 현재 머스테치 파일(index)을 기준으로 다른 파일을 가져온다.(여기서는 header)
 
 <h1>스프링 부트로 시작하는 웹 서비스 ver.2</h1>
 <div class="col-md-12">
@@ -12,6 +12,7 @@
             {{/userName}}
             {{^userName}}
                 <a href="/oauth2/authorization/google" class="btn btn-success active" role="button">Google Login</a>
+                <a href="/oauth2/authorization/naver" class="btn btn-secondary active" role="button">Naver Login</a>
             {{/userName}}
         </div>
     </div>
